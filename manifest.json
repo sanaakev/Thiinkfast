@@ -1,0 +1,22 @@
+
+{
+  "manifest_version": 3,
+  "name": "ThiinkFast",
+  "version": "0.1",
+  "description": "Grammar + autocorrect for neurodivergent thinkers. Smart. Fast. You-shaped.",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
